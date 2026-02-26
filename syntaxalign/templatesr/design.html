@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+.section-title {
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.design-grid {
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+}
+
+.design-card {
+    background:white;
+    width:340px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    overflow:hidden;
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.design-card:hover {
+    transform:translateY(-6px);
+}
+
+.design-media img,
+.design-media video {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.design-content {
+    padding:20px;
+    flex:1;
+}
+
+.design-content h3 {
+    margin-top:0;
+    color:#1e1b4b;
+}
+
+.design-content p {
+    font-size:14px;
+    color:#444;
+}
+
+.design-actions {
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.btn-primary {
+    background:#312e81;
+    color:white;
+    padding:8px 14px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.btn-primary:hover {
+    background:#4338ca;
+}
+
+@media (max-width:768px){
+    .design-grid {
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+
+<h1 class="section-title">Graphic & UI Design Services</h1>
+
+<div class="design-grid">
+
+    <!-- Branding -->
+    <div class="design-card">
+        <div class="design-media">
+            <img src="https://via.placeholder.com/600x400" alt="Branding">
+        </div>
+        <div class="design-content">
+            <h3>Brand Identity</h3>
+            <p>Professional logo systems, typography and visual identity guidelines.</p>
+        </div>
+        <div class="design-actions">
+            <a href="/contact/" class="btn-primary">Explore</a>
+        </div>
+    </div>
+
+    <!-- UI/UX -->
+    <div class="design-card">
+        <div class="design-media">
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="design-content">
+            <h3>UI/UX Design</h3>
+            <p>Modern application interfaces designed for usability and global standards.</p>
+        </div>
+        <div class="design-actions">
+            <a href="/contact/" class="btn-primary">Explore</a>
+        </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="design-card">
+        <div class="design-media">
+            <img src="https://via.placeholder.com/600x400" alt="Social Media">
+        </div>
+        <div class="design-content">
+            <h3>Marketing & Social Design</h3>
+            <p>Creative campaign visuals and social media graphics for brand growth.</p>
+        </div>
+        <div class="design-actions">
+            <a href="/contact/" class="btn-primary">Explore</a>
+        </div>
+    </div>
+
+</div>
+<section class="section" style="text-align:center;">
+
+    <h2>Start a Design Project</h2>
+    <p>Tell us about your requirements and we will propose a structured solution.</p>
+
+    <a href="/start-design/" class="btn-primary">
+        Request Design
+    </a>
+
+</section>
+{% endblock %}

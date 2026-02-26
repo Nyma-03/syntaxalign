@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/design.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="design-page">
+    <section class="design-hero">
+        <div class="hero-text">
+            <p class="eyebrow">Design Studio</p>
+            <h1 class="hero-title">Graphic & UI Design Services</h1>
+            <p class="hero-subtitle">
+                Bold, modern visuals for teams that want to look premium and feel effortless to use.
+                We design brand systems, digital experiences, and campaign assets that scale.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="/start-design/">Start a project</a>
+                <a class="btn btn-ghost" href="/contact/">Talk to the team</a>
+            </div>
+            <div class="hero-highlights">
+                <div class="highlight-card">
+                    <h3>Strategy-led</h3>
+                    <p>We align visuals to business goals and customer clarity.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>System thinking</h3>
+                    <p>Design kits and guidelines that stay consistent everywhere.</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-art">
+            <div class="hero-panel">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Design showcase">
+                <div class="hero-panel-meta">
+                    <span>Design sprint</span>
+                    <strong>4 weeks</strong>
+                </div>
+            </div>
+            <div class="hero-metrics">
+                <div>
+                    <h4>+3x</h4>
+                    <p>Faster launches</p>
+                </div>
+                <div>
+                    <h4>92%</h4>
+                    <p>Client satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <div class="section-title">
+            <h2>Design Products</h2>
+            <p>Three core offerings designed to elevate your brand and product experience.</p>
+        </div>
+
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-media">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=80" alt="Brand identity kit">
+                    <span class="media-tag">Brand Identity</span>
+                </div>
+                <div class="product-body">
+                    <h3>Brand Identity</h3>
+                    <p>Define your visual voice and build instant recognition.</p>
+                    <ul>
+                        <li>Logo systems and marks</li>
+                        <li>Typography and color libraries</li>
+                        <li>Brand guidelines and assets</li>
+                    </ul>
+                </div>
+                <div class="product-actions">
+                    <a href="/contact/" class="btn btn-primary">Explore</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-media">
+                    <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1200&q=80" alt="UI/UX interface design">
+                    <span class="media-tag">UI/UX Design</span>
+                </div>
+                <div class="product-body">
+                    <h3>UI/UX Design</h3>
+                    <p>Modern interfaces that feel smooth, intuitive, and conversion-ready.</p>
+                    <ul>
+                        <li>User flows and wireframes</li>
+                        <li>High-fidelity UI screens</li>
+                        <li>Design systems and components</li>
+                    </ul>
+                </div>
+                <div class="product-actions">
+                    <a href="/contact/" class="btn btn-primary">Explore</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-media">
+                    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80" alt="Marketing and social graphics">
+                    <span class="media-tag">Marketing & Social</span>
+                </div>
+                <div class="product-body">
+                    <h3>Marketing & Social Design</h3>
+                    <p>Campaign visuals that stop the scroll and lift engagement.</p>
+                    <ul>
+                        <li>Ad creatives and promos</li>
+                        <li>Social templates and packs</li>
+                        <li>Launch decks and banners</li>
+                    </ul>
+                </div>
+                <div class="product-actions">
+                    <a href="/contact/" class="btn btn-primary">Explore</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="detail-section">
+        <div class="detail-grid">
+            <div class="detail-text">
+                <p class="eyebrow">Brand Identity</p>
+                <h2>What it is and how we help</h2>
+                <p>
+                    Brand identity is the complete visual language of your business. We translate your
+                    story into logos, typography, color, and systems that make you instantly recognizable.
+                </p>
+                <div class="detail-list">
+                    <span>Discovery workshops and competitor scans</span>
+                    <span>Logo suites, iconography, and visual motifs</span>
+                    <span>Guidelines with ready-to-use assets</span>
+                </div>
+            </div>
+            <div class="detail-media">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Brand identity presentation">
+            </div>
+        </div>
+
+        <div class="detail-grid is-reverse">
+            <div class="detail-text">
+                <p class="eyebrow">UI/UX Design</p>
+                <h2>Experience-first interface design</h2>
+                <p>
+                    UI/UX design is how users feel while using your product. We craft smooth journeys,
+                    thoughtful layouts, and accessible interactions that reduce friction.
+                </p>
+                <div class="detail-list">
+                    <span>User research, journeys, and wireframes</span>
+                    <span>Pixel-perfect UI with responsive layouts</span>
+                    <span>Interactive prototypes and handoff files</span>
+                </div>
+            </div>
+            <div class="detail-media">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80" alt="UI/UX wireframes and screens">
+            </div>
+        </div>
+
+        <div class="detail-grid">
+            <div class="detail-text">
+                <p class="eyebrow">Marketing & Social Design</p>
+                <h2>Campaign-ready visuals</h2>
+                <p>
+                    Marketing design keeps your brand consistent across every channel. We design social
+                    posts, ads, and launch materials that look premium and drive action.
+                </p>
+                <div class="detail-list">
+                    <span>Social templates for every platform</span>
+                    <span>Campaign graphics and promo assets</span>
+                    <span>Brand-aligned motion and banners</span>
+                </div>
+            </div>
+            <div class="detail-media">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Marketing and social campaign visuals">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-card">
+            <div>
+                <h2>Start a design project</h2>
+                <p>Tell us about your goals and we will propose a tailored design roadmap.</p>
+            </div>
+            <a href="/start-design/" class="btn btn-primary">Request Design</a>
+        </div>
+    </section>
+    <script src="{% static 'js/reveal.js' %}"></script>
+</div>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/start_design.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="design-page">
+    <!-- Hero Section -->
+    <section class="design-hero">
+        <div class="design-hero-content">
+            <p class="design-eyebrow">Design Studio</p>
+            <h1 class="design-title">Start Your Design Project</h1>
+            <p class="design-subtitle">Share your creative vision with us. Our talented design team will bring your ideas to life with stunning visuals and innovative solutions.</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="design-form-section">
+        <div class="form-container">
+            <h2 class="form-title">Design Inquiry Form</h2>
+            <p class="form-subtitle">Tell us about your design needs and we'll get back to you soon</p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <!-- Project Type -->
+                <div class="form-group">
+                    <label for="project_type">Project Type *</label>
+                    <select id="project_type" name="project_type" required>
+                        <option value="">Select Project Type</option>
+                        <option value="business">Business</option>
+                        <option value="personal">Personal</option>
+                    </select>
+                </div>
+
+                <!-- Company Name -->
+                <div class="form-group">
+                    <label for="company_name">Company Name (If Business)</label>
+                    <input type="text" id="company_name" name="company_name" placeholder="Your Company Name" pattern="[A-Za-z0-9\s]{2,100}" title="Letters, numbers, spaces only">
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full_name">Full Name *</label>
+                        <input type="text" id="full_name" name="full_name" placeholder="Your Full Name" required pattern="[A-Za-z\s]{2,50}" title="Letters and spaces only, 2-50 characters">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" pattern="^\+?[\d\s\-]{7,15}$" title="Valid phone number, 7-15 digits">
+                </div>
+
+                <!-- Design Type -->
+                <div class="form-group">
+                    <label for="design_type">Type of Design Needed *</label>
+                    <select id="design_type" name="design_type" required>
+                        <option value="">Select Design Type</option>
+                        <option value="logo">Logo Design</option>
+                        <option value="branding">Brand Identity</option>
+                        <option value="social">Social Media Design</option>
+                        <option value="uiux">UI/UX Design</option>
+                        <option value="marketing">Marketing Materials</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="short_description">Project Description</label>
+                    <textarea id="short_description" name="short_description" placeholder="Tell us about your design project and what you're looking to achieve..."></textarea>
+                </div>
+
+                <!-- Budget & Timeline -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="proposed_offer">Budget Offer *</label>
+                        <input type="text" id="proposed_offer" name="proposed_offer" placeholder="e.g., $500" required pattern="\d+(\.\d{1,2})?" title="Numbers only, optional decimal">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expected_duration">Expected Duration *</label>
+                        <input type="text" id="expected_duration" name="expected_duration" placeholder="e.g., 2-3 weeks" required>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit">Submit Design Inquiry</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

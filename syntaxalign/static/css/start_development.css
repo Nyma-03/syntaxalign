@@ -1,0 +1,388 @@
+:root {
+    --dev-primary: #6366f1;
+    --dev-primary-dark: #4f46e5;
+    --dev-accent: #14b8a6;
+    --dev-danger: #ef4444;
+    --dev-success: #10b981;
+    --dev-bg: #f8f7f4;
+    --dev-card-bg: #ffffff;
+    --dev-text: #0f172a;
+    --dev-text-light: #475569;
+    --dev-border: rgba(15, 23, 42, 0.08);
+    --dev-shadow: 0 20px 60px rgba(15, 23, 42, 0.15);
+    --dev-shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.dev-page {
+    padding: 40px 0 80px;
+}
+
+/* ============ HERO SECTION ============ */
+
+.dev-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(20, 184, 166, 0.05) 100%);
+    border-radius: 24px;
+    margin-bottom: 60px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: var(--dev-primary);
+    margin-bottom: 16px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    margin: 0 0 16px;
+    color: var(--dev-text);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    color: var(--dev-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ============ FORM SECTION ============ */
+
+.dev-form-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-wrapper {
+    background: var(--dev-card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--dev-shadow);
+    border: 1px solid var(--dev-border);
+}
+
+.dev-form {
+    width: 100%;
+}
+
+.form-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--dev-text);
+}
+
+.form-subtitle {
+    font-size: 14px;
+    color: var(--dev-text-light);
+    margin: 0 0 32px;
+}
+
+.form-section {
+    margin-bottom: 32px;
+    animation: fadeInUp 0.5s ease;
+}
+
+.form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dev-text);
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+}
+
+.subsection-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 28px 0 16px;
+    color: var(--dev-text);
+}
+
+/* ============ RADIO GROUP ============ */
+
+.radio-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.radio-wrapper {
+    position: relative;
+}
+
+.radio-wrapper input {
+    display: none;
+}
+
+.radio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 20px;
+    border: 2px solid var(--dev-border);
+    border-radius: 16px;
+    background: var(--dev-card-bg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.radio-card:hover {
+    border-color: var(--dev-primary);
+    box-shadow: var(--dev-shadow-sm);
+    transform: translateY(-2px);
+}
+
+.radio-wrapper input:checked + .radio-card {
+    border-color: var(--dev-primary);
+    background: rgba(99, 102, 241, 0.08);
+    box-shadow: var(--dev-shadow-sm);
+}
+
+.radio-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.radio-content h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dev-text);
+}
+
+.radio-content p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--dev-text-light);
+}
+
+/* ============ FORM GROUPS ============ */
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: grid;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dev-text);
+    letter-spacing: 0.3px;
+}
+
+.form-control {
+    padding: 12px 14px;
+    border: 2px solid var(--dev-border);
+    border-radius: 10px;
+    font-size: 14px;
+    background: rgba(15, 23, 42, 0.02);
+    color: var(--dev-text);
+    font-family: inherit;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-control::placeholder {
+    color: var(--dev-text-light);
+    opacity: 0.6;
+}
+
+.form-control:hover {
+    border-color: var(--dev-primary);
+    background: rgba(99, 102, 241, 0.04);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--dev-primary);
+    background: rgba(99, 102, 241, 0.08);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+/* ============ BUTTONS ============ */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--dev-primary), var(--dev-accent));
+    color: white;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(99, 102, 241, 0.35);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============ ANIMATIONS ============ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 768px) {
+    .dev-hero {
+        padding: 40px 16px;
+        margin-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .form-wrapper {
+        padding: 24px 16px;
+    }
+
+    .form-title {
+        font-size: 22px;
+    }
+
+    .radio-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .dev-form-section {
+        padding: 0 12px;
+    }
+
+    .form-wrapper {
+        padding: 16px 12px;
+        border-radius: 14px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .form-title {
+        font-size: 18px;
+    }
+
+    .subsection-title {
+        font-size: 14px;
+        margin: 20px 0 12px;
+    }
+
+    .radio-card {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .radio-icon {
+        font-size: 40px;
+    }
+
+    .radio-content h3 {
+        font-size: 14px;
+    }
+
+    .radio-content p {
+        font-size: 12px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-control {
+        padding: 11px 12px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .btn {
+        padding: 11px 16px;
+        font-size: 13px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

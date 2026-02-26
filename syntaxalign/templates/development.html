@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/development.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="dev-hero">
+    <div class="dev-hero-copy">
+        <p class="eyebrow">Software Development</p>
+        <h1>Build resilient platforms with an expert engineering partner.</h1>
+        <p class="hero-lead">From custom web apps to complex backend ecosystems, we design and build products that scale with your business goals.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="/start-development/">Start a Development Project</a>
+            <a class="btn btn-ghost" href="/contact/">Book a Consultation</a>
+        </div>
+        <div class="hero-metrics">
+            <div>
+                <div class="metric-value">99.9%</div>
+                <div class="metric-label">Platform uptime</div>
+            </div>
+            <div>
+                <div class="metric-value">10-12 wks</div>
+                <div class="metric-label">Average MVP</div>
+            </div>
+            <div>
+                <div class="metric-value">24/7</div>
+                <div class="metric-label">Launch support</div>
+            </div>
+        </div>
+    </div>
+    <div class="dev-hero-visual">
+        <div class="hero-stack">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1100&q=80" alt="Engineering planning" class="hero-image">
+        </div>
+    </div>
+</section>
+
+<section class="dev-section">
+    <div class="section-header">
+        <p class="section-eyebrow">Engineering Services</p>
+        <h2 class="section-title">Full-stack execution for modern digital products.</h2>
+        <p class="section-subtitle">We combine product strategy, UX, and backend excellence to deliver software your team can trust.</p>
+    </div>
+    <div class="dev-grid">
+        <article class="dev-card">
+            <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1100&q=80" alt="Custom web applications" class="dev-image">
+            <div class="dev-card-body">
+                <span class="dev-tag">Custom Web Applications</span>
+                <h3>Custom Web Applications</h3>
+                <p>Tailored web platforms aligned to your workflows, brand, and user expectations.</p>
+                <ul>
+                    <li>Responsive UI and client portals</li>
+                    <li>Authentication and role management</li>
+                    <li>Performance-driven builds</li>
+                </ul>
+            </div>
+        </article>
+        <article class="dev-card">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1100&q=80" alt="Full-stack development" class="dev-image">
+            <div class="dev-card-body">
+                <span class="dev-tag">Full-Stack Development</span>
+                <h3>Full-Stack Development</h3>
+                <p>Unified frontend and backend delivery with clean APIs and reliable data flow.</p>
+                <ul>
+                    <li>React-ready UX systems</li>
+                    <li>Secure REST & GraphQL APIs</li>
+                    <li>Infrastructure and deployment</li>
+                </ul>
+            </div>
+        </article>
+        <article class="dev-card">
+            <img src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=1100&q=80" alt="SaaS platform" class="dev-image">
+            <div class="dev-card-body">
+                <span class="dev-tag">SaaS Platforms</span>
+                <h3>SaaS Platforms</h3>
+                <p>Scalable SaaS foundations with multi-tenant architecture and analytics.</p>
+                <ul>
+                    <li>Subscription-ready workflows</li>
+                    <li>Tenant isolation and admin tooling</li>
+                    <li>Growth-ready integrations</li>
+                </ul>
+            </div>
+        </article>
+        <article class="dev-card">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1100&q=80" alt="System architecture" class="dev-image">
+            <div class="dev-card-body">
+                <span class="dev-tag">System Architecture</span>
+                <h3>System Architecture & Backend Engineering</h3>
+                <p>Scalable system architecture, API ecosystems, and secure backend logic.</p>
+                <ul>
+                    <li>Microservices and modular design</li>
+                    <li>Security and compliance planning</li>
+                    <li>Performance monitoring</li>
+                </ul>
+            </div>
+        </article>
+        <article class="dev-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1100&q=80" alt="Database architecture" class="dev-image">
+            <div class="dev-card-body">
+                <span class="dev-tag">Database Strategy</span>
+                <h3>Database & Business Logic Architecture</h3>
+                <p>Structured databases and workflows that translate operations into reliable systems.</p>
+                <ul>
+                    <li>Schema design and integrity checks</li>
+                    <li>Business logic automation</li>
+                    <li>Reporting and analytics</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="demo-section">
+    <div class="demo-card">
+        <div>
+            <p class="section-eyebrow">Development Demo</p>
+            <h2>Experience a live SaaS build.</h2>
+            <p class="section-subtitle">Explore a working demo to see how we craft responsive, production-ready interfaces.</p>
+        </div>
+        <a class="btn btn-primary" href="https://nyma-03.github.io/Cake-Website-HomePage/" target="_blank" rel="noopener">Explore Live Demo</a>
+    </div>
+</section>
+
+<section class="cta-band dev-cta">
+    <div>
+        <h2>Start a Development Project</h2>
+        <p>Tell us about your goals and we will craft a roadmap for delivery.</p>
+    </div>
+    <a class="btn btn-primary" href="/start-development/">Start a Development Project</a>
+</section>
+{% endblock %}

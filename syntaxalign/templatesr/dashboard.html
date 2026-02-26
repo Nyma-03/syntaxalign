@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dashboard</h2>
+<h3>Your Orders</h3>
+<ul>
+{% for order in orders %}
+<li>{{ order.product.name }} - Ordered on {{ order.created_at }}</li>
+{% empty %}
+<li>No orders yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/start_development.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h2>Start a Development Project</h2>
+    <p>Please provide accurate information so our team can prepare a structured proposal.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Project Type Selection -->
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="project_type" value="business" onclick="toggleForm()" required> Business
+            </label>
+            <label>
+                <input type="radio" name="project_type" value="personal" onclick="toggleForm()"> Personal
+            </label>
+        </div>
+
+        <!-- ================= BUSINESS FORM ================= -->
+        <div id="businessForm" class="form-section">
+
+            <div class="section-title">Company Information</div>
+
+            <input type="text" name="company_name" placeholder="Registered Company Name" required pattern="[A-Za-z0-9\s]{2,100}" title="Letters, numbers, spaces only, 2-100 characters">
+            <input type="text" name="company_address" placeholder="Physical Office Address (if applicable)">
+            <input type="email" name="company_email" placeholder="Official Company Email" required>
+            <input type="text" name="company_phone" placeholder="Official Company Contact Number" required pattern="^\+?[\d\s\-]{7,15}$" title="Valid phone number, 7-15 digits">
+
+            <div class="section-title">Authorized Representative</div>
+
+            <input type="text" name="employee_name" placeholder="Full Name of Requesting Employee" required pattern="[A-Za-z\s]{2,50}" title="Letters and spaces only, 2-50 chars">
+            <input type="text" name="designation" placeholder="Designation / Job Title" required>
+            <input type="text" name="employee_phone" placeholder="Direct Contact Number" required pattern="^\+?[\d\s\-]{7,15}$" title="Valid phone number, 7-15 digits">
+            <input type="email" name="employee_email" placeholder="Direct Work Email" required>
+
+            <div class="section-title">Backup Contact Information</div>
+
+            <input type="text" name="backup_phone" placeholder="Backup Company Contact Number" pattern="^\+?[\d\s\-]{7,15}$" title="Valid phone number, 7-15 digits">
+            <input type="email" name="backup_email" placeholder="Backup Company Email">
+
+            <div class="section-title">Project Details</div>
+
+            <textarea name="project_scope" placeholder="Describe your project" required></textarea>
+
+            <input type="text" name="budget_range" placeholder="Estimated Budget Range" required pattern="\d+(\.\d{1,2})?" title="Numbers only, optional decimal">
+            <input type="text" name="timeline" placeholder="Expected Timeline" required>
+
+        </div>
+
+        <!-- ================= PERSONAL FORM ================= -->
+        <div id="personalForm" class="form-section">
+
+            <div class="section-title">Personal Information</div>
+
+            <input type="text" name="full_name" placeholder="Full Name" required pattern="[A-Za-z\s]{2,50}" title="Letters and spaces only, 2-50 chars">
+            <input type="text" name="phone" placeholder="Contact Number" required pattern="^\+?[\d\s\-]{7,15}$" title="Valid phone number, 7-15 digits">
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <div class="section-title">Project Information</div>
+
+            <textarea name="personal_project_details" placeholder="Describe your project idea in brief" required></textarea>
+
+            <input type="text" name="estimated_budget" placeholder="Estimated Budget" required pattern="\d+(\.\d{1,2})?" title="Numbers only, optional decimal">
+            <input type="text" name="preferred_timeline" placeholder="Preferred Timeline" required>
+
+        </div>
+
+        <button type="submit">Submit Project Inquiry</button>
+
+    </form>
+</div>
+
+{% comment %} <script>
+function toggleForm() {
+    var business = document.querySelector('input[value="business"]').checked;
+    var personal = document.querySelector('input[value="personal"]').checked;
+
+    document.getElementById("businessForm").style.display = business ? "block" : "none";
+    document.getElementById("personalForm").style.display = personal ? "block" : "none";
+}
+</script> {% endcomment %}
+<script>
+function toggleForm() {
+    const business = document.querySelector('input[value="business"]').checked;
+    const personal = document.querySelector('input[value="personal"]').checked;
+
+    const businessFields = document.querySelectorAll('#businessForm input, #businessForm textarea');
+    const personalFields = document.querySelectorAll('#personalForm input, #personalForm textarea');
+
+    document.getElementById("businessForm").style.display = business ? "block" : "none";
+    document.getElementById("personalForm").style.display = personal ? "block" : "none";
+
+    // Dynamically require fields only if section is visible
+    businessFields.forEach(field => {
+        if(business) {
+            if(field.name !== "company_address" && field.name !== "backup_email" && field.name !== "project_scope") field.required = true;
+        } else {
+            field.required = false;
+        }
+    });
+
+    personalFields.forEach(field => {
+        if(personal) {
+            if(field.name !== "personal_project_details") field.required = true;
+        } else {
+            field.required = false;
+        }
+    });
+}
+</script>
+
+
+{% endblock %}

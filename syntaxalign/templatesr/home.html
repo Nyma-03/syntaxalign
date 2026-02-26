@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+        <h1 class="text-4xl font-bold mb-4">Design & Software, Delivered</h1>
+        <p class="text-lg text-gray-600">Custom services and ready-made digital products.</p>
+    </section>
+
+    <!-- Features / Icons Section -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white shadow rounded-lg p-6 text-center">
+            <img src="https://via.placeholder.com/80" alt="Design Icon" class="mx-auto mb-4">
+            <h2 class="font-semibold text-xl mb-2">UI/UX Design</h2>
+            <p class="text-gray-600">Beautiful, user-friendly interfaces for web and mobile.</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6 text-center">
+            <img src="https://via.placeholder.com/80" alt="Development Icon" class="mx-auto mb-4">
+            <h2 class="font-semibold text-xl mb-2">Software Development</h2>
+            <p class="text-gray-600">Custom web and mobile applications built to scale.</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6 text-center">
+            <img src="https://via.placeholder.com/80" alt="Products Icon" class="mx-auto mb-4">
+            <h2 class="font-semibold text-xl mb-2">Digital Products</h2>
+            <p class="text-gray-600">Ready-made solutions to accelerate your business.</p>
+        </div>
+    </section>
+
+    <!-- Services Cards Section -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-lg shadow p-6">
+            <img src="https://via.placeholder.com/300x150" alt="Service 1" class="rounded mb-4">
+            <h3 class="font-semibold text-xl mb-2">Branding Package</h3>
+            <p class="text-gray-600">Logo, color palette, and brand assets to establish your identity.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6">
+            <img src="https://via.placeholder.com/300x150" alt="Service 2" class="rounded mb-4">
+            <h3 class="font-semibold text-xl mb-2">Web Application</h3>
+            <p class="text-gray-600">Custom-built web apps for startups and enterprises alike.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6">
+            <img src="https://via.placeholder.com/300x150" alt="Service 3" class="rounded mb-4">
+            <h3 class="font-semibold text-xl mb-2">Mobile App Template</h3>
+            <p class="text-gray-600">Prebuilt mobile app templates to jumpstart your project.</p>
+        </div>
+    </section>
+</div>
+{% endblock %}

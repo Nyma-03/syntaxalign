@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Contact</h2>
+<form method="post">{% csrf_token %}
+<input name="name" placeholder="Name"><br>
+<input name="email" placeholder="Email"><br>
+<textarea name="message" placeholder="Message"></textarea><br>
+<button type="submit">Send</button>
+</form>
+
+<p>Or email directly: <a href="mailto:youremail@gmail.com">youremail@gmail.com</a></p>
+{% endblock %}

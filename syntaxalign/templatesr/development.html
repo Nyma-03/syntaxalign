@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<style>
+
+.section {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+    font-size: 17px;
+    color: #444;
+    line-height: 1.7;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-image img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.feature-content h3 {
+    color: #1e1b4b;
+    margin-bottom: 15px;
+}
+
+.feature-content p {
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.demo-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9ff;
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background: #312e81;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+    color: #1e1b4b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+@media(max-width: 900px){
+    .feature-row {
+        flex-direction: column;
+    }
+    .feature-row.reverse {
+        flex-direction: column;
+    }
+}
+
+</style>
+
+
+<section class="section">
+
+    <h1 class="section-title">Software Development</h1>
+
+    <p class="section-subtitle">
+        We build scalable, secure, and production-ready digital solutions tailored to your business objectives.
+        Our process begins by deeply understanding your operational challenges, market positioning, and long-term vision.
+        By listening carefully to your needs, we architect solutions that align with your goals — whether that involves
+        custom frontend experiences, powerful backend infrastructures, or complete full-stack ecosystems.
+        <br><br>
+        Every project is executed by a dedicated team of experienced developers and professional designers who collaborate
+        closely to ensure performance, usability, and visual excellence. We do not simply build software — we engineer
+        long-term digital assets that support sustainable growth.
+    </p>
+
+</section>
+
+
+<!-- Custom Web Applications -->
+
+<section class="section">
+
+    <div class="feature-row">
+
+        <div class="feature-image">
+            <img src="{% static 'webpagepic1.JPG' %}" alt="Custom Website Demo">
+
+        </div>
+
+        <div class="feature-content">
+            <h3>Custom Web Applications</h3>
+            <p>
+                Every organization operates differently. We design and develop websites and applications that reflect
+                your brand identity, operational workflow, and customer expectations.
+            </p>
+            <p>
+                From landing pages and corporate profiles to complex internal dashboards, we tailor each interface
+                according to your industry standards and business goals. No templates. No generic designs.
+            </p>
+            <p>
+                Whether you require a minimal brand presence or a feature-rich platform, we ensure your solution is
+                aligned precisely with your market strategy.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Full Stack -->
+
+<section class="section">
+
+    <div class="feature-row reverse">
+
+        <div class="feature-image">
+            <img src="{% static 'webpagepic2.JPG' %}" alt="Full Stack Demo">
+        </div>
+
+        <div class="feature-content">
+            <h3>Full-Stack Development</h3>
+            <p>
+                We provide complete frontend and backend solutions — integrating modern user interfaces
+                with robust server-side logic and secure database management.
+            </p>
+            <p>
+                Our team ensures seamless communication between client-side components and backend systems,
+                resulting in fast, secure, and scalable applications suitable for growing businesses.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SaaS Platforms -->
+
+<section class="section">
+
+    <div class="feature-row">
+
+        <div class="feature-image">
+            <img src="{% static 'webpagepic1.JPG' %}" alt="SaaS Platform">
+        </div>
+
+        <div class="feature-content">
+            <h3>SaaS Platforms</h3>
+            <p>
+                We develop ready-made SaaS platforms including both frontend interfaces and backend systems.
+                These solutions are available for licensing and can be customized to match your brand and workflow.
+            </p>
+            <p>
+                Our SaaS products are engineered for scalability, allowing multiple organizations to operate
+                independently within a single architecture.
+            </p>
+            <p>
+                If you require a customized SaaS system, we also provide tailored development from concept to deployment.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Backend & Infrastructure -->
+
+<section class="section">
+
+    <div class="feature-row reverse">
+
+        <div class="feature-image">
+            <img src="{% static 'webpagepic1.JPG' %}" alt="Backend Infrastructure">
+        </div>
+
+        <div class="feature-content">
+            <h3>System Architecture & Backend Engineering</h3>
+            <p>
+                Our backend solutions are built using modern frameworks such as Django and PHP-based systems,
+                combined with responsive frontend technologies including HTML, CSS, and modern UI frameworks.
+            </p>
+            <p>
+                We focus on secure authentication systems, optimized APIs, scalable infrastructure,
+                and performance-driven server logic.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Database Architecture -->
+
+<section class="section">
+
+    <div class="feature-row">
+
+        <div class="feature-image">
+            <img src="{% static 'webpagepic1.JPG' %}" alt="Database Design">
+        </div>
+
+        <div class="feature-content">
+            <h3>Database & Business Logic Architecture</h3>
+            <p>
+                For non-technical founders and organizations, we translate complex operational processes into
+                structured digital systems.
+            </p>
+            <p>
+                We design secure database architectures that reflect your workflow — ensuring data integrity,
+                performance, and long-term maintainability.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Development Demo -->
+
+<section class="section">
+
+    <div class="demo-section">
+        <h2>Development Demo</h2>
+        <p>
+            Explore sample SaaS interfaces and development demonstrations.
+        </p>
+
+        <a href="https://nyma-03.github.io/Cake-Website-HomePage/" target="_blank" class="btn-primary">
+            Explore Live Demo
+        </a>
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="section" style="text-align:center;">
+
+    <h2>Start a Development Project</h2>
+    <p>Tell us about your requirements and we will propose a structured solution.</p>
+
+    <a href="/start-development/" class="btn-primary">
+        Start a Development Project
+    </a>
+
+</section>
+
+{% endblock %}

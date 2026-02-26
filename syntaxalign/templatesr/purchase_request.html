@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/purchase_request.css">
+<div style="max-width:500px; margin:50px auto; padding:20px; border:1px solid #ccc; border-radius:10px; font-family:Arial, sans-serif;">
+    <h2>Request to Buy: {{ product.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="padding:10px 20px; background-color:#28a745; color:white; border:none; border-radius:5px;">Submit</button>
+    </form>
+</div>
+{% endblock %}

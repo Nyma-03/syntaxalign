@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Pricing (Products Only)</h2>
+<p>These are our ready-made packages for purchase.</p>
+<ul>
+{% for p in products %}
+  <li>{{ p.name }} - ${{ p.price }}</li>
+{% empty %}
+  <li>No products available yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}

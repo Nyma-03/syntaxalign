@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Studio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+<header class="site-header">
+    <nav class="navbar">
+        <a class="brand" href="/">
+            <span class="brand-mark">SA</span>
+            <span class="brand-text">Syntax Align</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="/design/">Design</a>
+                    <a href="/development/">Development</a>
+                </div>
+            </div>
+            <a href="/work/">Portfolio</a>
+            <a href="/process/">Buy Now</a>
+            <a href="/contact/">Contact</a>
+        </div>
+
+        
+         <div class="nav-actions">
+        {% if user.is_authenticated %}
+            <a class="btn btn-ghost" href="/dashboard/">Dashboard</a>
+            <a class="btn btn-ghost" href="/logout/">Logout</a>
+        {% else %}
+            <a class="btn btn-ghost" href="/signup/">Sign Up</a>
+            <a class="btn btn-ghost" href="/login/">Login</a>
+        {% endif %}
+    </div>
+    </nav>
+</header>
+
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand-inline">
+                    <span class="brand-mark">SA</span>
+                    <span class="brand-text">Syntax Align</span>
+                </div>
+                <p class="footer-note">Design and development partners for modern teams building fast, beautiful products.</p>
+            </div>
+            <div>
+                <h3 class="footer-title">Services</h3>
+                <a href="/design/">UI/UX Design</a>
+                <a href="/development/">Software Development</a>
+                <a href="/services/">Digital Products</a>
+            </div>
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <a href="/about/">About Us</a>
+                <a href="/contact/">Contact Us</a>
+                <a href="/work/">Portfolio</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Syntax Align. All rights reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>

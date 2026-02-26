@@ -1,0 +1,147 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+.form-container {
+    max-width: 700px;
+    margin: auto;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+button {
+    background: #1e1b4b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover {
+    background: #312e81;
+}
+</style>
+
+<div class="form-container">
+
+<h2>Start a Design Project</h2>
+<p>Please provide basic information so we can evaluate your request and contact you.</p>
+
+<form method="post">
+{% csrf_token %}
+
+<label>Project Type</label>
+<select name="project_type" required>
+    <option value="">Select</option>
+    <option value="business">Business</option>
+    <option value="personal">Personal</option>
+</select>
+
+<input type="text" name="company_name" placeholder="Company Name (If Business)" pattern="[A-Za-z0-9\s]{2,100}" title="Letters, numbers, spaces only, 2-100 characters">
+
+<input type="text" name="full_name" placeholder="Full Name" required pattern="[A-Za-z\s]{2,50}" title="Letters and spaces only, 2-50 chars">
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="phone" placeholder="Phone Number" pattern="^\+?[\d\s\-]{7,15}$" title="Valid phone number, 7-15 digits">
+
+<label>Type of Design Needed</label>
+<select name="design_type" required>
+    <option value="">Select Design Type</option>
+    <option value="logo">Logo Design</option>
+    <option value="branding">Brand Identity</option>
+    <option value="social">Social Media Design</option>
+    <option value="uiux">UI/UX Design</option>
+    <option value="marketing">Marketing Materials</option>
+    <option value="other">Other</option>
+</select>
+
+<textarea name="short_description" placeholder="Brief description of what you need (optional)"></textarea>
+
+<input type="text" name="proposed_offer" placeholder="Your Proposed Budget Offer" required pattern="\d+(\.\d{1,2})?" title="Numbers only, optional decimal">
+<input type="text" name="expected_duration" placeholder="Expected Completion Duration" required>
+
+<button type="submit">Submit Inquiry</button>
+
+</form>
+
+</div>
+
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% block content %}
+
+<style>
+.form-container {
+    max-width: 700px;
+    margin: auto;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+button {
+    background: #1e1b4b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+}
+button:hover {
+    background: #312e81;
+}
+</style>
+
+<div class="form-container">
+
+<h2>Start a Design Project</h2>
+<p>Please provide basic information so we can evaluate your request and contact you.</p>
+
+<form method="post">
+{% csrf_token %}
+
+<label>Project Type</label>
+<select name="project_type" required>
+    <option value="">Select</option>
+    <option value="business">Business</option>
+    <option value="personal">Personal</option>
+</select>
+
+<input type="text" name="company_name" placeholder="Company Name (If Business)">
+
+<input type="text" name="full_name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="phone" placeholder="Phone Number">
+
+<label>Type of Design Needed</label>
+<select name="design_type" required>
+    <option value="">Select Design Type</option>
+    <option value="logo">Logo Design</option>
+    <option value="branding">Brand Identity</option>
+    <option value="social">Social Media Design</option>
+    <option value="uiux">UI/UX Design</option>
+    <option value="marketing">Marketing Materials</option>
+    <option value="other">Other</option>
+</select>
+
+<textarea name="short_description" placeholder="Brief description of what you need (optional)"></textarea>
+
+<input type="text" name="proposed_offer" placeholder="Your Proposed Budget Offer">
+<input type="text" name="expected_duration" placeholder="Expected Completion Duration">
+
+<button type="submit">Submit Inquiry</button>
+
+</form>
+
+</div>
+
+{% endblock %} {% endcomment %}
